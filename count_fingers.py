@@ -17,9 +17,9 @@ def countFingers(image, hand_landmarks, handNo=0):
        fingers=[]
        for lm_index in tipIds:
           finger_tip_y=landmarks[lm_index].y
-          finger_bottom_y=landmarks[lm_index].y
+          finger_bottom_y=landmarks[lm_index-2].y
           thumb_tip_x=landmarks[lm_index].x
-          thumb_bottom_x=landmarks[lm_index].x
+          thumb_bottom_x=landmarks[lm_index-2].x
           if lm_index!=4:
              if finger_tip_y<finger_bottom_y:
                 fingers.append(1)
